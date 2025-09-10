@@ -1,63 +1,71 @@
-# Data Visualization — Final Project
+# GDP per Capita vs Life Expectancy
 
-This is my final project for the Data Visualization course.
+An interactive dashboard exploring the relationship between countries' GDP per capita and life expectancy.
 
-Description
+Each point represents a country (bubble size ≈ population). The dashboard supports bubble and bar chart views, filtering by life expectancy range, and selecting the top N countries.
 
-- Small interactive visualization using HTML/CSS/JS.
-- Data files included: `gdp.xlsx`, `life.xlsx`.
-- Open `index.html` in a browser to view the visualization.
+![Dashboard screenshot](screenshot.png)
 
-Files
+Project overview
 
-- `index.html` — main page
-- `script.js` — visualization logic
-- `styles.css` — styles
-- `gdp.xlsx`, `life.xlsx` — datasets used by the project
+- Interactive visualization built with HTML, CSS and JavaScript (client-side).
+- Data included: `gdp.xlsx` and `life.xlsx` (source data used by the visualization).
+- Ideal for course review, demo, or portfolio showcase.
 
-How to view locally
+Dataset sources
 
-1. Open `index.html` in your browser (double-click or via a local server).
+- `gdp.xlsx` — GDP per capita values used for plotting.
+- `life.xlsx` — Life expectancy values used for plotting.
 
-Optional: run a local static server (recommended for some browsers):
+Technologies used
+
+- HTML5 & CSS3 — layout and styling
+- JavaScript (ES6) — application logic and interactivity
+- Plotting library (e.g. Plotly.js or D3.js) — interactive charts
+
+Key features
+
+- Bubble chart and Bar chart toggle
+- Filters: life expectancy min/max and Top N countries selector
+- Tooltips and details panel showing country GDP, life expectancy, and population
+- Responsive layout and smooth hover/click animations
+
+Quick start (view locally)
+
+1. Clone the repo
 
 ```bash
-# using Python 3
-cd "$(dirname "$0")" || exit
+git clone https://github.com/tankes93/gdp-life-visualization.git
+cd gdp-life-visualization
+```
+
+2. Ensure the data files are present (`gdp.xlsx`, `life.xlsx`) — they are included in the repo.
+
+3. Serve the folder locally (recommended) and open the demo in your browser:
+
+```bash
 python3 -m http.server 8000
 # then open http://localhost:8000 in your browser
 ```
 
-How to publish to GitHub
+Note: Some browsers restrict file:// access for certain features. Serving the files prevents those issues.
 
-I initialized a local git repository and made the initial commit in this folder.
+Files in this repo
 
-To create a remote repo and push from your machine (choose one):
+- `index.html` — main dashboard page
+- `script.js` — visualization and UI logic
+- `styles.css` — styling
+- `gdp.xlsx`, `life.xlsx` — source data
+- `screenshot.png` — demo screenshot used in this README
 
-1) Using GitHub CLI (recommended if installed and authenticated):
+Future improvements
 
-```bash
-cd "/Users/tejas/University/Semester 4/Data Visualization/final"
-# replace the repo name if you prefer
-gh repo create data-visualization-final --public --source=. --remote=origin --push --confirm
-```
-
-2) Manually via GitHub website:
-- Create a new repo (public or private) on github.com under your account.
-- On your machine run:
-
-```bash
-cd "/Users/tejas/University/Semester 4/Data Visualization/final"
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git branch -M main
-git push -u origin main
-```
-
-Notes
-
-- If you want me to create the remote for you, ensure the GitHub CLI (`gh`) is installed and you are signed in.
-- The `gdp.xlsx` and `life.xlsx` files are included so the project is reproducible. If you'd rather keep them out of the repo, I can add them to `.gitignore` instead.
+- Legends and advanced filters (continent, income group)  
+- Export charts as PNG/SVG  
+- Provide CSV alternatives and host large datasets as releases  
+- Accessibility and mobile UI improvements
 
 License
 
-This repository includes an MIT license file (`LICENSE`).
+This project is licensed under the MIT License — see `LICENSE`.
+
