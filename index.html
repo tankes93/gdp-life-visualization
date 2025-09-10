@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GDP per Capita vs Life Expectancy Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>GDP per Capita vs Life Expectancy Dashboard</h1>
+
+    <div id="chart-toggle">
+        <button id="show-bubble">Bubble Chart</button>
+        <button id="show-bar">Bar Chart</button>
+    </div>
+
+    <div id="controls">
+        <div class="control-item">
+            <label for="topNSelect">Top N Countries:</label>
+            <select id="topNSelect">
+                <option value="all">All</option>
+                <option value="10">Top 10</option>
+                <option value="20">Top 20</option>
+                <option value="50">Top 50</option>
+            </select>
+        </div>
+        <div class="control-item">
+            <label for="lifeMin">Life Expectancy Min:</label>
+            <input type="range" id="lifeMin" min="40" max="90" step="1" value="40">
+            <span id="lifeMinVal">40</span>
+        </div>
+        <div class="control-item">
+            <label for="lifeMax">Life Expectancy Max:</label>
+            <input type="range" id="lifeMax" min="40" max="90" step="1" value="90">
+            <span id="lifeMaxVal">90</span>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <!-- Bubble Chart -->
+        <div id="bubble-chart" class="chart"></div>
+        <!-- Bar Chart -->
+        <div id="bar-chart" class="chart" style="display: none;"></div>
+    </div>
+
+    <!-- Fixed details box for hovered country info -->
+    <div id="details-box">
+        <h3>Country Details</h3>
+        <p id="details-content">Hover over the data for more details</p>
+    </div>
+
+    <!-- Dynamic Tooltip (follows the mouse) -->
+    <div id="tooltip" class="tooltip"></div>
+
+    <!-- D3 & XLSX Libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
