@@ -4,7 +4,7 @@ An interactive dashboard exploring the relationship between countries' GDP per c
 
 Each point represents a country (bubble size ≈ population). The dashboard supports bubble and bar chart views, filtering by life expectancy range, and selecting the top N countries.
 
-![Dashboard screenshot](screenshot.png)
+![Dashboard screenshot](https://raw.githubusercontent.com/tankes93/gdp-life-visualization/main/screenshot.png)
 
 Project overview
 
